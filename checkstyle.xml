@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+        "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+        "https://checkstyle.org/dtds/configuration_1_3.dtd">
+<module name = "Checker">
+    <property name="charset" value="UTF-8"/>
+    <module name="TreeWalker">
+        <module name="AvoidStarImport"/> <!-- import文に「*」が使用されていると警告する -->
+        <module name="LineLength"> <!-- 1行を100文字以内にする、package文などは許容する -->
+            <property name="max" value="100"/>
+            <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
+        </module>
+        <module name="NeedBraces"/> <!-- {}の省略時に警告する -->
+        <module name="EmptyBlock">  <!-- {}内に何も書かない場合に警告する -->
+            <property name="option" value="text"/>
+        </module>
+        <module name="LeftCurly"/> <!-- 左の「{」の位置をチェックする -->
+        <module name="RightCurly"/> <!-- 右の「}」の位置をチェックする -->
+        <module name="AvoidInlineConditionals"/> <!-- 三項演算子使用時に警告する -->
+        <module name="EmptyStatement"/> <!--「if(condition);」のような空の文があると警告する -->
+        <module name="IllegalInstantiation"/> <!-- ラッパークラスの不要なインスタンス化を警告する -->
+        <module name="MissingSwitchDefault"/> <!-- switch文でdefaultの省略を警告する -->
+        <module name="SimplifyBooleanExpression"/> <!--「if(bool==true)」のような条件文を警告する -->
+        <module name="SimplifyBooleanReturn"/> <!-- ブール値を返す方法の単純化を促す -->
+        <module name="StringLiteralEquality"/> <!-- 文字列比較で「==」や「!=」の使用を警告する -->
+        <module name="UnnecessaryParentheses"/> <!-- 不要な「()」があれば警告する -->
+        <module name="MultipleVariableDeclarations"/> <!-- 1行に複数の変数宣言があれば警告する -->
+        <module name="ArrayTypeStyle"/> <!-- 配列宣言がJavaスタイル「int[] x」かをチェックする -->
+        <module name="MissingOverride"> <!-- オーバーライド時「@Override」があるかチェックする -->
+            <property name="javaFiveCompatibility" value="true"/>
+        </module>
+    </module>
+</module>
